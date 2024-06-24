@@ -8,8 +8,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="mx-auto grid min-h-screen max-w-screen-lg grid-rows-3 justify-center py-10">
-      <div className="row-span-2 space-y-10">
-        <div className="flex max-w-xl flex-col gap-2 px-2 text-center md:px-0">
+      <div className="row-span-2 space-y-10 px-2 md:px-0">
+        <div className="flex max-w-xl flex-col gap-2 text-center">
           <h1 className="text-5xl font-extrabold">
             Say What You Mean, Without <span>🤬</span>
           </h1>

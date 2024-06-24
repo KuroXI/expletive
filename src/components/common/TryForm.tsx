@@ -90,8 +90,8 @@ export const TryForm = () => {
   return (
     <div className="h-fit space-y-8 rounded border bg-accent p-5 shadow">
       <div className="space-y-2">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-5">
+        <div className="flex w-full flex-col items-end justify-between md:flex-row md:items-center">
+          <div className="flex w-full items-center justify-between gap-0 md:w-auto md:justify-start md:gap-5">
             <h1 className="font-black">POST</h1>
             <h1 className="text-sm">{getBaseURL()}/api/check</h1>
           </div>
@@ -105,7 +105,7 @@ export const TryForm = () => {
           <form
             onSubmit={form.handleSubmit(onSubmit)}
             ref={formRef}
-            className="flex gap-2"
+            className="flex flex-col gap-2 md:flex-row"
           >
             <FormField
               control={form.control}
@@ -136,7 +136,7 @@ export const TryForm = () => {
               ) : (
                 "Try it!"
               )}
-              <span className="ml-3 flex text-xs tracking-widest text-muted-foreground">
+              <span className="ml-3 hidden text-xs tracking-widest text-muted-foreground md:flex">
                 <CornerDownLeft size={15} /> Enter
               </span>
             </Button>
