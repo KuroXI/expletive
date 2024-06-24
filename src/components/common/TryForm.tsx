@@ -8,9 +8,14 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  cleanMessageResponses,
+  profanityDetectedResponses,
+} from "@/lib/constant";
+import { cn, getBaseURL, getRandomMessage } from "@/lib/utils";
 import { ResultType } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ClipboardCopy, CornerDownLeft, Loader2 } from "lucide-react";
+import { CornerDownLeft, Loader2 } from "lucide-react";
 import {
   ChangeEvent,
   KeyboardEvent,
@@ -21,11 +26,6 @@ import {
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Textarea } from "../ui/textarea";
-import { cn, getBaseURL, getRandomMessage } from "@/lib/utils";
-import {
-  cleanMessageResponses,
-  profanityDetectedResponses,
-} from "@/lib/constant";
 
 const FormSchema = z.object({
   message: z.string(),
@@ -73,8 +73,8 @@ export const TryForm = () => {
 
   const adjustHeight = (e: ChangeEvent<HTMLTextAreaElement>) => {
     e.currentTarget.style.height = "36px";
-    const height = e.currentTarget.scrollHeight;
-    e.currentTarget.style.height = `${height + 2}px`;
+    const height = e.currentTarget.scrollHeight + 2;
+    e.currentTarget.style.height = `${height}px`;
   };
 
   const shortcut = (e: KeyboardEvent<HTMLTextAreaElement>) => {
