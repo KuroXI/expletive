@@ -21,7 +21,7 @@ export default function Home() {
             <ExampleCode />
             <Button variant="link" className="border">
               <Star className="mr-2" size={20} />
-              <Link href="https://github.com/KuroXI/profanity">
+              <Link href="https://github.com/KuroXI/expletive">
                 Star on Github
               </Link>
             </Button>
